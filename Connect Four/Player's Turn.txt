@@ -1,0 +1,9 @@
+      Red          Player's        Turn
+    Yellow       Player's        Turn
+
+
+
+new
+
+    Yellow     Player's        Turn
+      Red        Player's        Turn
