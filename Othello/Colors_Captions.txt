@@ -1,0 +1,9 @@
+Othello Colors 
+Player 1 - &H00C0C0FF& pink color
+Player 2 - &H00000000& black color
+
+
+Player's Turn
+  Player 1's        Turn
+  Player 2's        Turn
+Computer's       Turn

@@ -1,0 +1,61 @@
+'play in any of the outer most cells if possible
+    '1) play in top row if possible
+    prev_max_moves = 0
+    curr_max_moves = 0
+    r = 0   'top row
+    For k = 0 To MAX_SIZE - 1
+        c = k
+        If (gamePos(r, c) = "") Then
+            If isMovePossible(16 * r + c, CHECK_MOVES, "Y") Then
+                'If curr_max_moves > prev_max_moves Then
+                    best_move = 16 * r + c
+                'End If
+            End If
+        End If
+    Next
+    
+    '2) play in extreme left column if possible
+    prev_max_moves = 0
+    curr_max_moves = 0
+    c = 0   'extreme left column
+    For k = 0 To MAX_SIZE - 1
+        r = k
+        If (gamePos(r, c) = "") Then
+            If isMovePossible(16 * r + c, CHECK_MOVES, "Y") Then
+                'If curr_max_moves > prev_max_moves Then
+                    best_move = 16 * r + c
+                'End If
+            End If
+        End If
+    Next
+    
+    
+    '3) play in bottom most row if possible
+    prev_max_moves = 0
+    curr_max_moves = 0
+    r = MAX_SIZE - 1 'bottom most row
+    For k = 0 To MAX_SIZE - 1
+        c = k
+        If (gamePos(r, c) = "") Then
+            If isMovePossible(16 * r + c, CHECK_MOVES, "Y") Then
+                'If curr_max_moves > prev_max_moves Then
+                    best_move = 16 * r + c
+                'End If
+            End If
+        End If
+    Next
+    
+    '4) play in extreme right column if possible
+    prev_max_moves = 0
+    curr_max_moves = 0
+    c = MAX_SIZE - 1 'extreme right column
+    For k = 0 To MAX_SIZE - 1
+        r = k
+        If (gamePos(r, c) = "") Then
+            If isMovePossible(16 * r + c, CHECK_MOVES, "Y") Then
+                'If curr_max_moves > prev_max_moves Then
+                    best_move = 16 * r + c
+                'End If
+            End If
+        End If
+    Next
