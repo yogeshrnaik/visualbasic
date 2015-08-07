@@ -1,0 +1,18 @@
+SYNOPSIS
+
+Name of the software: Reversi Game
+Language used: Microsoft Visual Basic 6.0
+
+About the Reversi Game:
+
+	Reversi is a game played between human and computer on a board of size 10 x 10. The user (yellow colour) always plays first and then computer plays with red colour. At the beginning, the initial configuration of the game is as shown in the figure.
+
+	The player plays the game by placing yellow squares on empty cells of the board. Yellow square can be placed at an empty position if there are only red squares (at least one, no empty spaces) between it and any other yellow square. A chance is passed on to other player if there is no possibility of any placement.
+
+	The legal move of the yellow player is indicated by a tick and the illegal by a cross. After playing at the ticked position, there will be three yellow and two red squares.
+ 	
+	The crux of the game lies in flanking opponent's squares. Flanking is achieved by entrapping squares of the opponent's colour in between the currently placed square and a previously placed self-owned square. All these squares must be in a straight line, vertically, horizontally or diagonally in any orientation. The opponent's squares so trapped, change colour to the player's own colour. 
+
+	Flanking is not cascaded. That is, when a red square is flanked and changes colour to yellow, it does not trigger the flanking of other red squares. A chain of mixed squares or gaps is not considered as a flank. 
+
+	At the end of the game (i.e. when all the squares of the board are filled), the player who owns more squares wins the game. It's a draw if there is a tie between the number of squares of player and the computer.
