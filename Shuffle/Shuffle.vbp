@@ -1,8 +1,9 @@
 Type=Exe
-Form=..\..\..\..\..\..\TAKETH~2\MYPROJ~1\MYVBPR~1\REVERS~1\ONEPLA~1\SUBMIT\PCRG10~1.FRM
+Form=Form1.frm
 Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\WINDOWS\SYSTEM\stdole2.tlb#OLE Automation
 IconForm="Form1"
 Startup="Form1"
+ExeName32="Shuffle.exe"
 Command32=""
 Name="Project1"
 HelpContextID="0"
