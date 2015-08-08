@@ -1,0 +1,11 @@
+DatabaseMod = 2, 2, 800, 569, C
+GeneralMod = 37, 105, 780, 527, C
+PDFParserMod = 15, 0, 800, 560, C
+PDFWord = 26, 13, 794, 565, C
+mdiMain = 214, 70, 758, 541, C, 66, 66, 441, 412, C
+PDFFileDetails = 22, 5, 790, 556, C
+ErrorHandlingMod = 35, 129, 482, 511, 
+frmLoadPDF = 3, 0, 797, 570, , 0, 0, 0, 0, C
+frmHelp = 129, 129, 576, 511, C, 0, 0, 0, 0, C
+frmSearch = 1, 0, 799, 569, , 0, 0, 0, 0, C
+frmEditFileEntry = 19, 8, 786, 562, CZ, 0, 0, 0, 0, C

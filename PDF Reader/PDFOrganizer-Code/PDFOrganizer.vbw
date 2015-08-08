@@ -1,0 +1,17 @@
+DatabaseMod = 0, 0, 0, 0, C
+GeneralMod = 170, 178, 617, 551, C
+PDFParserMod = 60, 14, 712, 538, C
+PDFWord = 0, 0, 0, 0, C
+mdiMain = 38, 138, 485, 511, , 0, 0, 0, 0, C
+PDFFileDetails = 38, 138, 485, 511, C
+ErrorHandlingMod = 0, 0, 0, 0, C
+frmLoadPDF = 132, 138, 579, 511, C, 132, 132, 669, 576, C
+frmHelp = 127, 129, 574, 511, C, 0, 0, 0, 0, C
+frmSearch = 18, 9, 777, 558, C, 88, 88, 634, 532, C
+frmEditFileEntry = 38, 138, 485, 511, CZ, 66, 66, 619, 502, C
+SearchMod = 39, 139, 484, 507, CZ
+FormatList = 133, 139, 580, 512, CZ
+CTooltip = 122, 129, 569, 679, CZ
+MSExcel = 44, 44, 169, 488, C
+frmStartup = 127, 129, 574, 511, I, 0, 0, 0, 0, C
+BrowseFolderMod = 19, 10, 791, 569, C

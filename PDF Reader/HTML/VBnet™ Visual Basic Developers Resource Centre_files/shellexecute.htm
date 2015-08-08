@@ -1,0 +1,1178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0049)http://vbnet.mvps.org/code/shell/shellexecute.htm -->
+<HTML xmlns:mso = "urn:schemas-microsoft-com:office:office" xmlns:msdt = 
+"uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><HEAD><TITLE>[VBnet Win32 Shell]  ShellExecute: ShellExecute Madness</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2900.2802" name=GENERATOR>
+<META content=FrontPage.Editor.Document name=ProgId>
+<META 
+content="VBnet provides Intermediate and Advanced Win32 API code for VB developers. Comprehensive Code, FAQ, Developers Resources &amp; News, alphabetical API/Type/Constant/Method Index, along with the largest Visual Basic-related links list on the net." 
+name=description>
+<META 
+content="Visual Basic, Visual Basic Developers Resource Centre, API, WinAPI, VB3, VB4, VB5, VB6, code, GetDesktopWindow, ShellExecute, SW_SHOWNORMAL, SW_SHOWMAXIMIZED, SW_SHOWDEFAULT, SE_ERR_NOASSOC, RunShellExecute" 
+name=keywords><LINK href="shellexecute_files/vbnet.css" type=text/css 
+rel=stylesheet><!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:Categories msdt:dt="string">Code Page;Code: shell</mso:Categories>
+</mso:CustomDocumentProperties>
+</xml><![endif]--></HEAD>
+<BODY bgColor=#ffffff leftMargin=0 marginwidth="0"><!--webbot bot="Include" u-include="../../menus/pages/head.htm" tag="BODY" startspan -->
+<SCRIPT language=JavaScript src="shellexecute_files/vbnetcode.js"></SCRIPT>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <P align=center><A 
+      href="http://www.mvps.org/cgi-bin/ads/ads.pl?banner=NonSSI;zone=vbnet-t;page=01" 
+      target=_vbnetad><IMG height=60 alt="VBnet Sponsor" 
+      src="shellexecute_files/vm_digitalimgs.jpg" width=468 border=0></A> <!-- do not delete next line --><IMG alt="" src="" border=0></P></TD></TR>
+  <TR>
+    <TD><FONT size=1>&nbsp;&nbsp;</FONT></TD></TR></TBODY></TABLE>
+<TABLE id=table1 cellSpacing=0 cellPadding=0 width=530 bgColor=#29527c 
+  border=0><TBODY>
+  <TR>
+    <TD vAlign=top noWrap width=7 height=50><IMG height=4 
+      src="shellexecute_files/4x4.gif" width=7 border=0></TD>
+    <TD vAlign=top noWrap colSpan=2 height=50><IMG height=4 
+      src="shellexecute_files/4x4.gif" width=4 border=0><IMG height=50 
+      src="shellexecute_files/vbnlogobm.gif" width=550 border=0></TD>
+    <TD vAlign=top width=14 height=66 rowSpan=2><IMG height=66 
+      src="shellexecute_files/headend.gif" width=14 border=0></TD></TR>
+  <TR>
+    <TD vAlign=top noWrap width=7 height=16><IMG height=16 
+      src="shellexecute_files/headstart.gif" width=7 border=0></TD>
+    <TD vAlign=top noWrap height=16><IMG height=16 
+      src="shellexecute_files/headline.gif" width=130 border=0></TD>
+    <TD vAlign=top width=496 height=16><IMG height=16 
+      src="shellexecute_files/headline.gif" width=426 
+border=0></TD></TR></TBODY></TABLE><!--webbot bot="Include" endspan i-checksum="23949" --><!--webbot bot="Include" u-include="../../menus/pages/code.htm"
+tag="BODY" startspan -->
+<SCRIPT language=JavaScript src="shellexecute_files/vbnetnav.js"></SCRIPT>
+
+<SCRIPT language=JavaScript src="shellexecute_files/vbneturlcopy.js"></SCRIPT>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top noWrap align=left width=140 height=8><IMG height=8 
+      src="shellexecute_files/1x1w.gif" width=1 border=0></TD>
+    <TD vAlign=top noWrap align=left colSpan=2 height=8><IMG height=8 
+      src="shellexecute_files/1x1w.gif" width=1 border=0></TD></TR>
+  <TR>
+    <TD vAlign=top noWrap align=left width=140>&nbsp; </TD>
+    <TD vAlign=top noWrap align=left colSpan=2>
+      <TABLE cellSpacing=0 cellPadding=0 border=0 vspace="0" hspace="0">
+        <TBODY>
+        <TR>
+          <TD vAlign=top noWrap align=left width=70 height=20><IMG height=20 
+            src="shellexecute_files/mtop-code.gif" width=70 border=0></TD>
+          <TD vAlign=top noWrap align=left width=70 height=20><IMG height=20 
+            src="shellexecute_files/mtop-blank70.gif" width=70 border=0></TD>
+          <TD vAlign=top noWrap align=left width=65 height=20><IMG height=20 
+            src="shellexecute_files/mtop-blank70.gif" width=70 border=0></TD>
+          <TD vAlign=top noWrap align=left width=52 height=20><IMG height=20 
+            src="shellexecute_files/mtop-blank70.gif" width=52 border=0></TD>
+          <TD vAlign=top noWrap align=left width=70 height=20><IMG height=20 
+            src="shellexecute_files/mtop-blank70.gif" width=82 border=0></TD>
+          <TD vAlign=top noWrap align=left width=65 height=20><IMG height=20 
+            src="shellexecute_files/mtop-search.gif" width=70 border=0></TD></TR>
+        <TR>
+          <TD vAlign=top noWrap align=left width=70><A 
+            onmouseover="swapMenu('cmnew', 1)" onmouseout="swapMenu('cmnew', 0)" 
+            href="http://vbnet.mvps.org/code/main/index.html"><IMG height=11 
+            src="shellexecute_files/cmnew.gif" width=70 border=0 
+          name=cmnew></A></TD>
+          <TD vAlign=top noWrap align=left width=70><A 
+            onmouseover="swapMenu('cmcctls', 1)" 
+            onmouseout="swapMenu('cmcctls', 0)" 
+            href="http://vbnet.mvps.org/code/comctl/index.html"><IMG height=11 
+            src="shellexecute_files/cmcctls.gif" width=70 border=0 
+            name=cmcctls></A></TD>
+          <TD vAlign=top noWrap align=left width=65><A 
+            onmouseover="swapMenu('cmfile', 1)" 
+            onmouseout="swapMenu('cmfile', 0)" 
+            href="http://vbnet.mvps.org/code/fileapi/index.html"><IMG height=11 
+            src="shellexecute_files/cmfile.gif" width=70 border=0 
+            name=cmfile></A></TD>
+          <TD vAlign=top noWrap align=left width=52><A 
+            onmouseover="swapMenu('cmlist', 1)" 
+            onmouseout="swapMenu('cmlist', 0)" 
+            href="http://vbnet.mvps.org/code/listapi/index.html"><IMG height=11 
+            src="shellexecute_files/cmlist.gif" width=62 border=0 
+            name=cmlist></A></TD>
+          <TD vAlign=top noWrap align=left width=70><A 
+            onmouseover="swapMenu('cmsort', 1)" 
+            onmouseout="swapMenu('cmsort', 0)" 
+            href="http://vbnet.mvps.org/code/sort/index.html"><IMG height=11 
+            src="shellexecute_files/cmsort.gif" width=52 border=0 
+            name=cmsort></A></TD>
+          <TD vAlign=top noWrap align=left width=65><A 
+            onmouseover="swapMenu('sevbnet', 1)" 
+            onmouseout="swapMenu('sevbnet', 0)" 
+            href="http://vbnet.mvps.org/search/main/index.html"><IMG height=11 
+            src="shellexecute_files/sevbnet.gif" width=70 border=0 
+            name=sevbnet></A></TD></TR>
+        <TR>
+          <TD vAlign=top noWrap align=left width=70><A 
+            onmouseover="swapMenu('cmalgor', 1)" 
+            onmouseout="swapMenu('cmalgor', 0)" 
+            href="http://vbnet.mvps.org/code/algorithms/index.html"><IMG 
+            height=11 src="shellexecute_files/cmalgor.gif" width=70 border=0 
+            name=cmalgor></A></TD>
+          <TD vAlign=top noWrap align=left width=70><A 
+            onmouseover="swapMenu('cmcdlgs', 1)" 
+            onmouseout="swapMenu('cmcdlgs', 0)" 
+            href="http://vbnet.mvps.org/code/comdlg/index.html"><IMG height=11 
+            src="shellexecute_files/cmcdlgs.gif" width=70 border=0 
+            name=cmcdlgs></A></TD>
+          <TD vAlign=top noWrap align=left width=65><A 
+            onmouseover="swapMenu('cmhelp', 1)" 
+            onmouseout="swapMenu('cmhelp', 0)" 
+            href="http://vbnet.mvps.org/code/helpers/index.html"><IMG height=11 
+            src="shellexecute_files/cmhelp.gif" width=70 border=0 
+            name=cmhelp></A></TD>
+          <TD vAlign=top noWrap align=left width=52><A 
+            onmouseover="swapMenu('cmlocale', 1)" 
+            onmouseout="swapMenu('cmlocale', 0)" 
+            href="http://vbnet.mvps.org/code/locale/index.html"><IMG height=11 
+            src="shellexecute_files/cmlocale.gif" width=52 border=0 
+            name=cmlocale></A></TD>
+          <TD vAlign=top noWrap align=left width=70><A 
+            onmouseover="swapMenu('cmsclass', 1)" 
+            onmouseout="swapMenu('cmsclass', 0)" 
+            href="http://vbnet.mvps.org/code/subclass/index.html"><IMG height=11 
+            src="shellexecute_files/cmsclass.gif" width=70 border=0 
+            name=cmsclass></A></TD>
+          <TD vAlign=top noWrap align=left width=65><A 
+            onmouseover="swapMenu('sehound', 1)" 
+            onmouseout="swapMenu('sehound', 0)" 
+            href="http://www.codehound.com/vb/"><IMG height=11 
+            src="shellexecute_files/sehound.gif" width=70 border=0 
+            name=sehound></A></TD></TR>
+        <TR>
+          <TD vAlign=top noWrap align=left width=70><A 
+            onmouseover="swapMenu('cmavi', 1)" onmouseout="swapMenu('cmavi', 0)" 
+            href="http://vbnet.mvps.org/code/avi/index.html"><IMG height=11 
+            src="shellexecute_files/cmavi.gif" width=70 border=0 
+          name=cmavi></A></TD>
+          <TD vAlign=top noWrap align=left width=70><A 
+            onmouseover="swapMenu('cmcore', 1)" 
+            onmouseout="swapMenu('cmcore', 0)" 
+            href="http://vbnet.mvps.org/code/core/index.html"><IMG height=11 
+            src="shellexecute_files/cmcore.gif" width=70 border=0 
+            name=cmcore></A></TD>
+          <TD vAlign=top noWrap align=left width=70><A 
+            onmouseover="swapMenu('cmhook', 1)" 
+            onmouseout="swapMenu('cmhook', 0)" 
+            href="http://vbnet.mvps.org/code/hooks/index.html"><IMG height=11 
+            src="shellexecute_files/cmhook.gif" width=62 border=0 
+            name=cmhook></A></TD>
+          <TD vAlign=top noWrap align=left width=52><A 
+            onmouseover="swapMenu('cmmenu', 1)" 
+            onmouseout="swapMenu('cmmenu', 0)" 
+            href="http://vbnet.mvps.org/code/menu/index.html"><IMG height=11 
+            src="shellexecute_files/cmmenu.gif" width=52 border=0 
+            name=cmmenu></A></TD>
+          <TD vAlign=top noWrap align=left width=70><A 
+            onmouseover="swapMenu('cmsystem', 1)" 
+            onmouseout="swapMenu('cmsystem', 0)" 
+            href="http://vbnet.mvps.org/code/system/index.html"><IMG height=11 
+            src="shellexecute_files/cmsystem.gif" width=70 border=0 
+            name=cmsystem></A></TD>
+          <TD vAlign=top noWrap align=left width=65><A 
+            href="http://support.microsoft.com/default.aspx?scid=fh;EN-CA;kbhowto&amp;sd=GN&amp;ln=EN-US&amp;FR=0"><IMG 
+            height=11 src="shellexecute_files/semskb.gif" width=70 border=0 
+            name=semskb></A></TD></TR>
+        <TR>
+          <TD vAlign=top noWrap align=left width=70><A 
+            onmouseover="swapMenu('cmbmp', 1)" onmouseout="swapMenu('cmbmp', 0)" 
+            href="http://vbnet.mvps.org/code/bitmap/index.html"><IMG height=11 
+            src="shellexecute_files/cmbmp.gif" width=70 border=0 
+          name=cmbmp></A></TD>
+          <TD vAlign=top noWrap align=left width=70><A 
+            onmouseover="swapMenu('cmdisk', 1)" 
+            onmouseout="swapMenu('cmdisk', 0)" 
+            href="http://vbnet.mvps.org/code/disk/index.html"><IMG height=11 
+            src="shellexecute_files/cmdisk.gif" width=70 border=0 
+            name=cmdisk></A></TD>
+          <TD vAlign=top noWrap align=left width=65><A 
+            onmouseover="swapMenu('cmicon', 1)" 
+            onmouseout="swapMenu('cmicon', 0)" 
+            href="http://vbnet.mvps.org/code/icon/index.html"><IMG height=11 
+            src="shellexecute_files/cmicon.gif" width=62 border=0 
+            name=cmicon></A></TD>
+          <TD vAlign=top noWrap align=left width=52><A 
+            onmouseover="swapMenu('cmnet', 1)" onmouseout="swapMenu('cmnet', 0)" 
+            href="http://vbnet.mvps.org/code/network/index.html"><IMG height=11 
+            src="shellexecute_files/cmnet.gif" width=52 border=0 
+          name=cmnet></A></TD>
+          <TD vAlign=top noWrap align=left width=70><A 
+            onmouseover="swapMenu('cmtext', 1)" 
+            onmouseout="swapMenu('cmtext', 0)" 
+            href="http://vbnet.mvps.org/code/textapi/index.html"><IMG height=11 
+            src="shellexecute_files/cmtext.gif" width=70 border=0 
+            name=cmtext></A></TD>
+          <TD vAlign=top noWrap align=left width=65><IMG height=11 
+            src="shellexecute_files/cmline65gd.gif" width=65></TD></TR>
+        <TR>
+          <TD vAlign=top noWrap align=left width=70><A 
+            onmouseover="swapMenu('cmbrowse', 1)" 
+            onmouseout="swapMenu('cmbrowse', 0)" 
+            href="http://vbnet.mvps.org/code/browse/index.html"><IMG height=11 
+            src="shellexecute_files/cmbrowse.gif" width=70 border=0 
+            name=cmbrowse></A></TD>
+          <TD vAlign=top noWrap align=left width=65><A 
+            onmouseover="swapMenu('cmenum', 1)" 
+            onmouseout="swapMenu('cmenum', 0)" 
+            href="http://vbnet.mvps.org/code/enums/index.html"><IMG height=11 
+            src="shellexecute_files/cmenum.gif" width=70 border=0 
+            name=cmenum></A></TD>
+          <TD vAlign=top noWrap align=left width=65><A 
+            onmouseover="swapMenu('cmimage', 1)" 
+            onmouseout="swapMenu('cmimage', 0)" 
+            href="http://vbnet.mvps.org/code/imageapi/index.html"><IMG height=11 
+            src="shellexecute_files/cmimage.gif" width=62 border=0 
+            name=cmimage></A></TD>
+          <TD vAlign=top noWrap align=left width=52><A 
+            onmouseover="swapMenu('cmproject', 1)" 
+            onmouseout="swapMenu('cmproject', 0)" 
+            href="http://vbnet.mvps.org/code/project/index.html" 
+            target=_self><IMG height=11 src="shellexecute_files/cmproject.gif" 
+            width=52 border=0 name=cmproject></A></TD>
+          <TD vAlign=top noWrap align=left><A 
+            onmouseover="swapMenu('cmwin32', 1)" 
+            onmouseout="swapMenu('cmwin32', 0)" 
+            href="http://vbnet.mvps.org/code/shell/index.html"><IMG height=11 
+            src="shellexecute_files/cmwin32.gif" width=70 border=0 
+            name=cmwin32></A></TD>
+          <TD vAlign=top noWrap align=left width=65><A 
+            href="http://vbnet.mvps.org/code/main/contents.html"><IMG height=11 
+            src="shellexecute_files/setopic.gif" width=65 border=0 
+            name=setopic></A></TD></TR>
+        <TR>
+          <TD vAlign=top noWrap align=left width=70><A 
+            onmouseover="swapMenu('cmcback', 1)" 
+            onmouseout="swapMenu('cmcback', 0)" 
+            href="http://vbnet.mvps.org/code/callback/index.html"><IMG height=11 
+            src="shellexecute_files/cmcback.gif" width=70 border=0 
+            name=cmcback></A></TD>
+          <TD vAlign=top noWrap align=left width=70><A 
+            onmouseover="swapMenu('faqcode', 1)" 
+            onmouseout="swapMenu('faqcode', 0)" 
+            href="http://vbnet.mvps.org/code/faq/index.html"><IMG height=11 
+            src="shellexecute_files/faqcode.gif" width=72 border=0 
+            name=faqcode></A></TD>
+          <TD vAlign=top noWrap align=left width=65><A 
+            onmouseover="swapMenu('cminternet', 1)" 
+            onmouseout="swapMenu('cminternet', 0)" 
+            href="http://vbnet.mvps.org/code/internet/index.html" 
+            target=_self><IMG height=11 src="shellexecute_files/cminternet.gif" 
+            width=62 border=0 name=cminternet></A></TD>
+          <TD vAlign=top noWrap align=left width=52><A 
+            onmouseover="swapMenu('cmreg', 1)" onmouseout="swapMenu('cmreg', 0)" 
+            href="http://vbnet.mvps.org/code/reg/index.html"><IMG height=11 
+            src="shellexecute_files/cmreg.gif" width=52 border=0 
+          name=cmreg></A></TD>
+          <TD vAlign=top noWrap align=left width=70><A 
+            onmouseover="swapMenu('cmwindows', 1)" 
+            onmouseout="swapMenu('cmwindows', 0)" 
+            href="http://vbnet.mvps.org/code/forms/index.html"><IMG height=11 
+            src="shellexecute_files/cmwindows.gif" width=82 border=0 
+            name=cmwindows></A></TD>
+          <TD vAlign=top noWrap align=left width=65><IMG height=11 
+            src="shellexecute_files/cmline65gd.gif" width=65></TD></TR>
+        <TR>
+          <TD vAlign=top noWrap align=left width=70><A 
+            onmouseover="swapMenu('cmcombo', 1)" 
+            onmouseout="swapMenu('cmcombo', 0)" 
+            href="http://vbnet.mvps.org/code/comboapi/index.html"><IMG height=11 
+            src="shellexecute_files/cmcombo.gif" width=70 border=0 
+            name=cmcombo></A></TD>
+          <TD vAlign=top noWrap align=left width=70><A 
+            onmouseover="swapMenu('cmfiles', 1)" 
+            onmouseout="swapMenu('cmfiles', 0)" 
+            href="http://vbnet.mvps.org/code/file/index.html"><IMG height=11 
+            src="shellexecute_files/cmfiles.gif" width=70 border=0 
+            name=cmfiles></A></TD>
+          <TD vAlign=top noWrap align=left width=65><A 
+            onmouseover="swapMenu('cmintr', 1)" 
+            onmouseout="swapMenu('cmintr', 0)" 
+            href="http://vbnet.mvps.org/code/intrinsic/index.html"><IMG 
+            height=11 src="shellexecute_files/cmintr.gif" width=62 border=0 
+            name=cmintr></A></TD>
+          <TD vAlign=top noWrap align=left width=52><A 
+            onmouseover="swapMenu('cmscr', 1)" onmouseout="swapMenu('cmscr', 0)" 
+            href="http://vbnet.mvps.org/code/screen/index.html"><IMG height=11 
+            src="shellexecute_files/cmscr.gif" width=52 border=0 
+          name=cmscr></A></TD>
+          <TD vAlign=top noWrap align=left width=70><A 
+            onmouseover="swapMenu('cmwmi', 1)" onmouseout="swapMenu('cmwmi', 0)" 
+            href="http://vbnet.mvps.org/code/wmi/index.html"><IMG height=11 
+            src="shellexecute_files/cmwmi.gif" width=62 border=0 
+          name=cmwmi></A></TD>
+          <TD vAlign=top noWrap align=left width=65><A 
+            onmouseover="swapMenu('ads', 1)" onmouseout="swapMenu('ads', 0)" 
+            href="http://vbnet.mvps.org/sponsor/main/index.html"><IMG height=11 
+            src="shellexecute_files/ads.gif" width=90 border=0 
+        name=ads></A></TD></TR>
+        <TR>
+          <TD width=406 colSpan=6><IMG height=11 
+            src="shellexecute_files/lineg311.gif" width=427 
+        border=0></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD noWrap align=left width=140 height=16></TD>
+    <TD vAlign=top noWrap align=left width=372 height=16>
+      <SCRIPT language=JavaScript src="shellexecute_files/vbneturl.js"></SCRIPT>
+    </TD>
+    <TD vAlign=bottom noWrap align=left width=55 height=16><IMG 
+      onmouseup="src='../../images/nav/copyurl_on.gif'" 
+      onmousedown="src='../../images/nav/copyurl_hot.gif'" 
+      onmouseover="src='../../images/nav/copyurl_on.gif'" 
+      onclick=copyURLtoClipboard(); 
+      onmouseout="src='../../images/nav/copyurl.gif'" height=14 
+      src="shellexecute_files/copyurl.gif" width=55 align=left border=0></TD></TR>
+  <TR>
+    <TD vAlign=top noWrap align=left width=140>&nbsp;&nbsp;&nbsp;</TD>
+    <TD vAlign=top noWrap align=left width=427 
+  colSpan=2>&nbsp;&nbsp;&nbsp;</TD></TR></TBODY></TABLE><!--webbot bot="Include" endspan i-checksum="43953" -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0 marginwidth="0" 
+marginheight="0" topmargin="0">
+  <TBODY>
+  <TR>
+    <TD vAlign=top noWrap align=right width=140><FONT face="verdana, arial" 
+      size=1>&nbsp;&nbsp;&nbsp;</FONT></TD>
+    <TD vAlign=top noWrap align=left width=435>
+      <P align=right><IMG height=11 src="shellexecute_files/1x1w.gif" width=1 
+      border=0></P></TD>
+    <TD vAlign=top align=left width="100%"><FONT face="verdana, arial" 
+      size=1>&nbsp;&nbsp;&nbsp;</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top noWrap align=right width=140></TD>
+    <TD vAlign=top align=left width="100%" colSpan=2><FONT color=#29527c><FONT 
+      face="verdana, arial" size=1>Visual Basic Win32 Shell Routines</FONT><FONT 
+      face="verdana, arial" size=4><BR></FONT><FONT face="verdana, arial" 
+      size=3><STRONG>ShellExecute: ShellExecute 
+  Madness</STRONG></FONT></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top noWrap align=right width=140><FONT face="verdana, arial" 
+      color=#29527c size=1>&nbsp;&nbsp;</FONT></TD>
+    <TD vAlign=top align=left width="100%" colSpan=2><FONT 
+      face="verdana, arial" color=#29527c size=1>&nbsp;&nbsp;</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top noWrap align=right width=140><FONT face="verdana, arial" 
+      color=#29527c size=1>Posted</FONT><FONT face="verdana, arial" 
+      color=#29527c size=1>:&nbsp;&nbsp;</FONT></TD>
+    <TD vAlign=top align=left width="100%" colSpan=2><FONT 
+      face="verdana, arial" color=#29527c size=1><STRONG>Monday October 26, 
+      1998</STRONG></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top noWrap align=right width=140><FONT face="verdana, arial" 
+      color=#29527c size=1>Updated:&nbsp;&nbsp;</FONT></TD>
+    <TD vAlign=top align=left width="100%" colSpan=2><FONT 
+      face="verdana, arial" color=#29527c size=1><STRONG><!--webbot bot="Timestamp"
+         s-type="EDITED" s-format="%A %B %d, %Y" startspan -->Wednesday 
+      January 04, 
+      2006<!--webbot bot="Timestamp" endspan i-checksum="65263" --></STRONG></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top noWrap align=right width=140><FONT face="verdana, arial" 
+      color=#29527c size=1>&nbsp;&nbsp;</FONT></TD>
+    <TD vAlign=top align=left width="100%" colSpan=2><FONT 
+      face="verdana, arial" color=#29527c size=1>&nbsp;&nbsp;</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top noWrap align=right width=140><FONT face="verdana, arial" 
+      color=#29527c size=1>Applies to:&nbsp;&nbsp;</FONT></TD>
+    <TD vAlign=top align=left width="100%" colSpan=2><FONT 
+      face="verdana, arial" color=#29527c size=1><STRONG>VB4-32, VB5, 
+      VB6</STRONG></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top noWrap align=right width=140><FONT face="verdana, arial" 
+      color=#29527c size=1>Developed with:&nbsp;&nbsp;</FONT></TD>
+    <TD vAlign=top align=left width="100%" colSpan=2><FONT 
+      face="verdana, arial" color=#29527c size=1><STRONG>VB5, Windows 
+      98</STRONG></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top noWrap align=right width=140><FONT face="verdana, arial" 
+      color=#29527c size=1>OS restrictions:&nbsp;&nbsp;</FONT></TD>
+    <TD vAlign=top align=left width="100%" colSpan=2><FONT 
+      face="verdana, arial" color=#29527c 
+  size=1><STRONG>None</STRONG></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top noWrap align=right width=140><FONT face="verdana, arial" 
+      color=#29527c size=1>Author:&nbsp;&nbsp;</FONT></TD>
+    <TD vAlign=top align=left width="100%" colSpan=2><FONT 
+      face="verdana, arial" color=#29527c size=1><STRONG>VB<EM>net</EM> - Randy 
+      Birch</STRONG></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top noWrap align=right width=140><FONT face="verdana, arial" 
+      color=#29527c size=1>&nbsp;&nbsp;</FONT></TD>
+    <TD vAlign=top align=left width="100%" colSpan=2><FONT 
+      face="verdana, arial" color=#29527c size=1>&nbsp;&nbsp;</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top noWrap align=right width=140>
+      <P class=need85wwl><FONT face="verdana, arial" color=#29527c 
+      size=1>Related:&nbsp;&nbsp;</FONT></P></TD>
+    <TD vAlign=top align=left width="100%" colSpan=2><FONT 
+      face="verdana, arial" size=1><A 
+      href="http://vbnet.mvps.org/code/intrinsic/sehyperlink.htm">ShellExecute: 
+      Simulate a Hyperlink with a Label Control</A><BR><A 
+      href="http://vbnet.mvps.org/code/system/findexecutable.htm">FindExecutable: 
+      Find Exe Associated with a Registered Extension</A><BR><A 
+      href="http://vbnet.mvps.org/code/internet/browserstart.htm">CreateProcess: 
+      Start Separate Instances of the Default Browser</A></FONT><BR><FONT 
+      face="verdana, arial" size=1><SPAN class=need85wwl><A 
+      href="http://vbnet.mvps.org/code/internet/shellexecutelargeemail.htm">ShellExecute: 
+      Send Large Emails in Outlook Express</A></SPAN></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top noWrap align=right width=140><FONT face="verdana, arial" 
+      size=1>&nbsp;&nbsp;&nbsp;</FONT></TD>
+    <TD vAlign=top align=left width="100%" colSpan=2><FONT 
+      face="verdana, arial" size=1>&nbsp;&nbsp;&nbsp;</FONT></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=15 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%" bgColor=#29527c height=22><FONT 
+      face="Univers, Arial, Helvetica, Verdana, Sans-serif" color=#ffffff 
+      size=2><STRONG>&nbsp;Prerequisites</STRONG></FONT></TD></TR>
+  <TR>
+    <TD width="100%"><FONT 
+      face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+    size=2>None.</FONT></TD></TR>
+  <TR>
+    <TD width="100%">
+      <HR color=#29527c noShade SIZE=1>
+    </TD></TR>
+  <TR>
+    <TD width="100%">
+      <P align=center><IMG height=449 hspace=10 
+      src="shellexecute_files/shellexecute.gif" width=659 vspace=10 
+border=0></P>
+      <P align=left><FONT face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+      size=2>Windows' file associations provide the easiest way to launch 
+      applications by passing just the path and filename of the item to open. At 
+      the centre of this functionality is the ShellExecute API.</FONT> </P>
+      <P><FONT face="Univers, Arial, Helvetica, Verdana, Sans-serif" size=2>The 
+      Windows 95, 98 and NT and later design guides stress that for an 
+      application to conform to the Windows Logo guidelines, execution of 
+      associated applications must be made using the ShellExecute API and not 
+      the CreateProcess API.&nbsp; The rational for this is that under Windows 
+      NT and later, system administrators may have disabled or prevented users 
+      from opening or accessing specific file types.&nbsp;The ShellExecute API 
+      honours any restrictions while CreateProcess does not.&nbsp;</FONT></P>
+      <P><FONT face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+      size=2>ShellExecute takes six parameters, many of which are 
+      optional:</FONT></P>
+      <TABLE cellSpacing=0 cellPadding=5 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top align=left><FONT 
+            face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+            size=2><B>hWnd</B></FONT></TD>
+          <TD vAlign=top align=left width="100%"><FONT 
+            face="Univers, Arial, Helvetica, Verdana, Sans-serif" size=2>The 
+            Window handle to a parent window. This window receives any message 
+            boxes that an application produces. For example, an application may 
+            report an error by producing a message box. Typically this is the 
+            desktop (and is used as such in this routine).</FONT></TD></TR>
+        <TR>
+          <TD vAlign=top align=left><FONT 
+            face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+            size=2><B>lpOperation</B></FONT></TD>
+          <TD vAlign=top align=left width="100%"><FONT 
+            face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+            size=2>Specifies the action (verb) that will take place on 
+            execution. With the exception of null, these are passed as 
+            strings:</FONT> 
+            <TABLE cellSpacing=0 cellPadding=5 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD noWrap width=16></TD>
+                <TD vAlign=top noWrap align=left width=75><FONT 
+                  face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+                  size=2><B>"Open"</B></FONT></TD>
+                <TD vAlign=top align=left width="100%"><FONT 
+                  face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+                  size=2>The function opens the file specified by the lpFile 
+                  parameter. The file can be an executable file or a document 
+                  file. It can also be a folder.</FONT></TD></TR>
+              <TR>
+                <TD noWrap width=16></TD>
+                <TD vAlign=top noWrap align=left width=75><FONT 
+                  face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+                  size=2><B>"Print"</B></FONT></TD>
+                <TD vAlign=top align=left width="100%"><FONT 
+                  face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+                  size=2>The function prints the file specified by lpFile. The 
+                  file should be a document file. If the file is an executable 
+                  file, the function opens the file, as if "open" had been 
+                  specified.</FONT></TD></TR>
+              <TR>
+                <TD noWrap width=16></TD>
+                <TD vAlign=top noWrap align=left width=75><FONT 
+                  face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+                  size=2><B>"Explore"</B></FONT></TD>
+                <TD vAlign=top align=left width="100%"><FONT 
+                  face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+                  size=2>The function explores the folder specified by 
+                  lpFile.</FONT></TD></TR>
+              <TR>
+                <TD noWrap width=16>&nbsp;</TD>
+                <TD vAlign=top noWrap align=left width=75><FONT 
+                  face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+                  size=2><B>"Play"</B></FONT></TD>
+                <TD vAlign=top align=left width="100%"><FONT 
+                  face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+                  size=2>For methods supporting a play function, such as sound 
+                  files.</FONT></TD></TR>
+              <TR>
+                <TD noWrap width=16></TD>
+                <TD vAlign=top noWrap align=left width=75><FONT 
+                  face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+                  size=2><B>"Properties"</B></FONT></TD>
+                <TD vAlign=top align=left width="100%"><FONT 
+                  face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+                  size=2>For displaying the Properties page for 
+              files</FONT></TD></TR>
+              <TR>
+                <TD noWrap width=16></TD>
+                <TD vAlign=top noWrap align=left width=75><FONT 
+                  face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+                  size=2><B>0&amp;</B></FONT></TD>
+                <TD vAlign=top align=left width="100%"><FONT 
+                  face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+                  size=2>lpOperation can be also be NULL (0&amp; if declared As 
+                  Any, or vbNullString if declared As String). In these cases 
+                  the call performs the default verb action on the file 
+                  specified, which is usually Open.&nbsp; The default action can 
+                  be seen by viewing specific extension in Explorer's Tool / 
+                  Folder Options / File Types.</FONT></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD vAlign=top align=left><FONT 
+            face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+            size=2>lpFile</FONT></TD>
+          <TD vAlign=top align=left width="100%"><FONT 
+            face="Univers, Arial, Helvetica, Verdana, Sans-serif" size=2>A 
+            string that specifies the file to open or print or the folder to 
+            open or explore. The function can open an executable file or a 
+            document file. The function can print a document file.</FONT></TD></TR>
+        <TR>
+          <TD vAlign=top align=left><FONT 
+            face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+            size=2>lpParameters</FONT></TD>
+          <TD vAlign=top align=left width="100%"><FONT 
+            face="Univers, Arial, Helvetica, Verdana, Sans-serif" size=2>If the 
+            lpFile parameter specifies an executable file, lpParameters is a 
+            string that specifies the parameters to be passed to the application 
+            (the startup parameters). If lpFile specifies a document file, 
+            lpParameters should be NULL (0&amp; or vbNullString).</FONT></TD></TR>
+        <TR>
+          <TD vAlign=top align=left><FONT 
+            face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+            size=2>lpDirectory</FONT></TD>
+          <TD vAlign=top align=left width="100%"><FONT 
+            face="Univers, Arial, Helvetica, Verdana, Sans-serif" size=2>A 
+            string that specifies the default (working) directory.</FONT></TD></TR>
+        <TR>
+          <TD vAlign=top align=left><FONT 
+            face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+            size=2>nShowCmd</FONT></TD>
+          <TD vAlign=top align=left width="100%"><FONT 
+            face="Univers, Arial, Helvetica, Verdana, Sans-serif" size=2>Like 
+            other show commands, this specifies how the application is to be 
+            shown when it is opened</FONT></TD></TR></TBODY></TABLE>
+      <P><FONT face="Univers, Arial, Helvetica, Verdana, Sans-serif" size=2>The 
+      demo below uses the ShellExecute API to launch common operations; email, 
+      internet explorer sites, opening documents, playing sounds, just a subset 
+      of the things you can do with this API.&nbsp; A single wrapper routine of 
+      three lines provides all the functionality. By trapping the return value 
+      you can optionally display the "Open With" dialog.</FONT>
+      <P><FONT face="Univers, Arial, Helvetica, Verdana, Sans-serif" size=2>Note 
+      that some items in the Command1 code have hard-coded paths to files. If 
+      the ShellExecute call appears to do nothing, check to ensure that item's 
+      file reference exists. Placing a Me.Caption = Index statement in 
+      Option1_Click can be of help.</FONT>
+      <P><FONT face="Univers, Arial, Helvetica, Verdana, Sans-serif" size=2>If 
+      you need to obtain information about the application that is launched as a 
+      result of calling ShellExecute, use the ShellExecuteEx API 
+      instead.</FONT></P></TD></TR>
+  <TR>
+    <TD width="100%"></TD></TR>
+  <TR>
+    <TD width="100%" bgColor=#29527c height=22><FONT 
+      face="Univers, Arial, Helvetica, Verdana, Sans-serif" color=#ffffff 
+      size=2><STRONG>&nbsp;BAS Module Code</STRONG></FONT></TD></TR>
+  <TR>
+    <TD width="100%"><FONT 
+      face="Univers, Arial, Helvetica, Verdana, Sans-serif" 
+    size=2>None.</FONT></TD></TR>
+  <TR>
+    <TD width="100%">
+      <HR color=#29527c noShade SIZE=1>
+    </TD></TR>
+  <TR>
+    <TD width="100%"></TD></TR>
+  <TR>
+    <TD width="100%" bgColor=#29527c height=22><FONT 
+      face="Univers, Arial, Helvetica, Verdana, Sans-serif" color=#ffffff 
+      size=2><STRONG>&nbsp;Form Code</STRONG></FONT></TD></TR>
+  <TR>
+    <TD width="50%"><!--webbot bot="Include" u-include="../../menus/pages/jscopyfrm.htm" tag="BODY" startspan --><IMG 
+      onmouseup="src='../../images/nav/copyfrm_on.gif'" 
+      onmousedown="src='../../images/nav/copyfrm_hot.gif'" 
+      onmouseover="src='../../images/nav/copyfrm_on.gif'" onclick=ClipForm(); 
+      onmouseout="src='../../images/nav/copyfrm.gif'" height=11 
+      src="shellexecute_files/copyfrm.gif" width=90 border=0> <!--webbot bot="Include" endspan i-checksum="55606" --></TD></TR>
+  <TR>
+    <TD width="50%"><FONT 
+      face="Univers, Arial, Helvetica, Verdana, Sans-serif" size=2>This demo 
+      recreates the form above - just add one option button (Option1) and one 
+      label (Label1) and set the Index property of each control to 0 to create 
+      control arrays. 95% of the code below supports the control creation and 
+      variable population for this demo; the actual call is just a few lines 
+      (the last procedure in the code). </FONT>
+      <P><FONT face="Univers, Arial, Helvetica, Verdana, Sans-serif" size=2>Add 
+      a single command button (Command1) and the following code into the general 
+      declarations area of the form:</FONT></P></TD></TR>
+  <TR>
+    <TD width="100%">
+      <HR color=#29527c noShade SIZE=1>
+    </TD></TR>
+  <TR>
+    <TD width="100%"><PRE>Option Explicit</PRE><!--webbot bot="Include" u-include="../../terms/copycode.htm" tag="BODY" startspan --><PRE><FONT face="Courier New" color=#0000ff size=2>''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' Copyright ©1996-2006 VB<EM>net</EM>, Randy Birch, All Rights Reserved.
+' Some pages may also contain other copyrights by the author.
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' Distribution: You can freely use this code in your own
+'               applications, but you may not reproduce 
+'               or publish this code on any web site,
+'               online service, or distribute as source 
+'               on any media without express permission.
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''</FONT></PRE><!--webbot bot="Include" endspan i-checksum="57648" --><SPAN 
+      id=copyfrm><PRE>Private dwOptSelected As Long
+
+Private Const SW_SHOWNORMAL As Long = 1
+Private Const SW_SHOWMAXIMIZED As Long = 3
+Private Const SW_SHOWDEFAULT As Long = 10
+
+Private Const mailNewLine = "%0D%0A"
+
+Private Declare Function GetDesktopWindow Lib "user32" () As Long
+
+Private Declare Function ShellExecute Lib "shell32.dll" _
+   Alias "ShellExecuteA" _
+  (ByVal hwnd As Long, _
+   ByVal lpOperation As String, _
+   ByVal lpFile As String, _
+   ByVal lpParameters As String, _
+   ByVal lpDirectory As String, _
+   ByVal nShowCmd As Long) As Long
+
+
+
+Private Sub Form_Load()
+
+   Call CreateControls
+   Option1(0).Value = True
+   
+End Sub
+
+
+Private Sub Form_Unload(Cancel As Integer)
+
+   Dim cnt As Long
+   
+   For cnt = Option1.UBound To 1 Step -1
+      Unload Option1(cnt)
+   Next
+   
+   For cnt = Label1.UBound To 1 Step -1
+      Unload Label1(cnt)
+   Next
+   
+End Sub
+
+
+Private Sub Option1_Click(Index As Integer)
+
+   dwOptSelected = Index
+   
+End Sub
+
+
+Private Sub Command1_Click()
+
+   Dim sTopic As String
+   Dim sFile As String
+   Dim sParams As String
+   Dim sDirectory As String
+
+<FONT color=#0000ff>  'set default setting to be used
+  'if not specifically required</FONT>
+   sTopic = "Open"
+   sFile = vbNullString
+   sParams = vbNullString
+   sDirectory = vbNullString
+              
+<FONT color=#0000ff>  'set custom values based on selected item</FONT>
+   With Option1(dwOptSelected)
+      Select Case dwOptSelected
+      
+      '---------------------------------------------
+<FONT color=#0000ff>      'Block2 (column 1) - BROWSER DEMOS</FONT>
+         Case 0: <FONT color=#0000ff> 'Open Default Browser</FONT>
+            sFile = "http://www.mvps.org/vbnet/"
+            
+         Case 1:  <FONT color=#0000ff>'IE Default Home Page (new browser)</FONT>
+            sFile = "explorer.exe"
+            sParams = "::{871C5380-42A0-1069-A2EA-08002B30309D}"
+         
+         Case 2:  <FONT color=#0000ff>'Specific Browser (knowing exe path)</FONT>
+            sFile = "C:\Program Files\Internet Explorer\iexplore.exe"
+            sParams = "http://www.mvps.org/vbnet/"
+
+         Case 3:  <FONT color=#0000ff>'Email w/subject/sig</FONT>
+            sFile = "mailto:test@who.com?subject=Email via Shellexecute"
+            
+<FONT color=#0000ff>      '---------------------------------------------
+      'Block2 (column 1) - EMAIL DEMOS</FONT>
+         Case 4:  <FONT color=#0000ff>'Email w/subject/message</FONT>
+            sFile = "mailto:me@mydesk.com?" &amp; _
+                    "&amp;subject=" &amp; "Test Message" &amp; _
+                    "&amp;body=" &amp; "Test message using the default email client."
+                    
+         Case 5: <FONT color=#0000ff> 'Email w/cc/bcc/message</FONT>
+            sFile = "mailto:me@mydesk.com" &amp; _
+                    "?cc=someone@outhere.com" &amp; _
+                    "&amp;bcc=hidden@recipient.com" &amp; _
+                    "&amp;subject=" &amp; "Test Message" &amp; _
+                    "&amp;body=" &amp; "Test message using the default email client."
+         
+         Case 6:  <FONT color=#0000ff>'Email w/mutli-line message</FONT>
+               sFile = "mailto:me@mydesk.com?cc=someone@outhere.com" &amp; _
+                       "&amp;subject=Test Message" &amp; _
+                       "&amp;body=Test using default email client, line 1." &amp; _
+                        mailNewLine &amp; "And this is line 2."
+         
+<FONT color=#0000ff>      '---------------------------------------------
+      'Block 3 (column 1) - NEWS DEMOS</FONT>
+         Case 7:  <FONT color=#0000ff>'msnews w/default news reader</FONT>
+            sFile = "news://msnews.microsoft.com/"
+   
+         Case 8:  <FONT color=#0000ff>'msnews - specific acct (vb.winapi)</FONT>
+            sFile = "news://msnews.microsoft.com/microsoft.public.vb.winapi"
+
+<FONT color=#0000ff>      '---------------------------------------------
+      'Block 4 (column 1) - FILE SYSTEM DEMOS</FONT>
+         Case 9:  <FONT color=#0000ff>'.doc Files (Association)
+</FONT>            sFile = "c:\my documents\somefile.doc"
+            
+         Case 10:  <FONT color=#0000ff>'.txt Files (Association)
+</FONT>            sFile = "c:\my documents\somefile.txt"
+         
+         Case 11:  <FONT color=#0000ff>'.wav Files (Open)
+</FONT>            sFile = "c:\windows\media\notify.wav"
+            
+         Case 12:  <FONT color=#0000ff>'.wav Files (Play)
+</FONT>            sTopic = "Play"
+            sFile = "c:\windows\media\notify.wav"
+            
+         Case 13:  <FONT color=#0000ff>'.avi (Play)
+</FONT>            sTopic = "Play"
+            sFile = "d:\graphics\vbgfx\anis\glassie box.ani"
+         
+         Case 14:  <FONT color=#0000ff>'.bat (for exiting in notepad)
+</FONT>            sFile = "c:\windows\notepad.exe"
+            sParams = "c:\autoexec.bat"
+            
+         Case 15:  <FONT color=#0000ff>'.lnk Files (Open shortcut)
+</FONT>            sFile = "c:\documents and settings\birchr\desktop\agent ransack.lnk"
+            
+         Case 16:  <FONT color=#0000ff>'.html (Open local HTML File)
+</FONT>            sFile = "c:\web files\index.html"
+
+<FONT color=#0000ff>      '---------------------------------------------
+      'Block 1 (column 2) - EXPLORER (absolute)</FONT>
+         Case 18:  <FONT color=#0000ff>'Rooted @ program files (default view)
+</FONT>            sFile = "explorer.exe"
+            sParams = "/root,c:\program files"
+               
+         Case 19:  <FONT color=#0000ff>'Rooted @ program files (explorer view)
+</FONT>            sFile = "explorer.exe"
+            sParams = "/e,/root,c:\program files"
+         
+         Case 20:  <FONT color=#0000ff>'My Computer, specific folder opened
+</FONT>            sFile = "explorer.exe"
+            sParams = "/e,c:\program files"
+         
+         Case 21:  <FONT color=#0000ff>'Explore Drive C:\
+</FONT>            sFile = "explorer.exe"
+            sParams = "/e,c:\"
+         
+         Case 22:  <FONT color=#0000ff>'Explore Current Drive (same as CurDrive)
+</FONT>            sFile = "explorer.exe"
+            sParams = "/e,\"
+            
+         Case 23:  <FONT color=#0000ff>'Recycle Bin
+</FONT>            sFile = "explorer.exe"
+            sParams = "/n,::{645FF040-5081-101B-9F08-00AA002F954E}"
+         
+         Case 24:  <FONT color=#0000ff>'Open folder &amp; select file (default view)
+</FONT>            sFile = "explorer.exe"
+            sParams = "/select,c:\windows\notepad.exe"
+            
+         Case 25:  <FONT color=#0000ff>'Explore folder &amp;&amp; select file
+</FONT>            sFile = "explorer.exe"
+            sParams = "/e,/select,c:\windows\notepad.exe"
+            
+         Case 26:  <FONT color=#0000ff>'Root at specific folder (default view)
+</FONT>            sFile = "explorer.exe"
+            sParams = "/root,c:\windows"
+            
+         Case 27:  <FONT color=#0000ff>'Root at specific folder (default view)
+</FONT>            sFile = "c:\windows\"
+            sTopic = "Find"
+                        
+<FONT color=#0000ff>      '---------------------------------------------
+      'Block 2 (column 2) - EXPLORER (localized)</FONT>
+         Case 28: <FONT color=#0000ff> 'My Computer (default view)
+</FONT>            sFile = "explorer.exe"
+            sParams = "::{20D04FE0-3AEA-1069-A2D8-08002B30309D}"
+            
+         Case 29:  <FONT color=#0000ff>'My Computer (explorer view)
+</FONT>            sFile = "explorer.exe"
+            sParams = "/e,::{20D04FE0-3AEA-1069-A2D8-08002B30309D}"
+         
+         Case 30:  <FONT color=#0000ff>'My Documents (default view)
+</FONT>            sFile = "explorer.exe"
+            sParams = "::{450D8FBA-AD25-11D0-98A8-0800361B1103}"
+         
+         Case 31:  <FONT color=#0000ff>'My Documents (explorer view)
+</FONT>            sFile = "explorer.exe"
+            sParams = "/e,::{450D8FBA-AD25-11D0-98A8-0800361B1103}"
+         
+         Case 32: <FONT color=#0000ff> 'My Documents (rooted)
+</FONT>            sFile = "explorer.exe"
+            sParams = "/root,::{450D8FBA-AD25-11D0-98A8-0800361B1103}"
+         
+         Case 33: <FONT color=#0000ff> 'My Network Places (default view)
+</FONT>            sFile = "explorer.exe"
+            sParams = "::{208D2C60-3AEA-1069-A2D7-08002B30309D}"
+                        
+         Case 34: <FONT color=#0000ff> 'Network Connections (default view)
+</FONT>            sFile = "explorer.exe"
+            sParams = "::{7007ACC7-3202-11D1-AAD2-00805FC1270E}"
+            
+         Case 35:  <FONT color=#0000ff>'Network Connections (explorer view)
+</FONT>            sFile = "explorer.exe"
+            sParams = "/e,::{7007ACC7-3202-11D1-AAD2-00805FC1270E}"
+         
+         Case 36:  <FONT color=#0000ff>'Printers &amp; Faxes (default view)
+</FONT>            sFile = "explorer.exe"
+            sParams = "::{2227A280-3AEA-1069-A2DE-08002B30309D}"
+            
+         Case 37:  <FONT color=#0000ff>'Printers &amp; Faxes (explorer view)
+</FONT>            sFile = "explorer.exe"
+            sParams = "/e,::{2227A280-3AEA-1069-A2DE-08002B30309D}"
+            
+         Case 38:  <FONT color=#0000ff>'Search results (files, default view)
+</FONT>            sFile = "explorer.exe"
+            sParams = "::{e17d4fc0-5564-11d1-83f2-00a0c90dc849}"
+         
+         Case 39:  <FONT color=#0000ff>'Search results (computers, default view)
+</FONT>            sFile = "explorer.exe"
+            sParams = "::{1f4de370-d627-11d1-ba4f-00a0c91eedba}"
+         
+         Case 40:  <FONT color=#0000ff>'Scheduled Tasks (default view)
+</FONT>            sFile = "explorer.exe"
+            sParams = "::{D6277990-4C6A-11CF-8D87-00AA0060F5BF}"
+      End Select
+
+   End With
+   
+   Call RunShellExecute(sTopic, sFile, sParams, sDirectory, SW_SHOWDEFAULT)
+   
+End Sub
+
+
+Private Sub CreateControls()
+
+   Dim cnt As Long
+   Dim vtmp As Long
+   Dim vtmp2 As Long
+   Dim vtmp3 As Long
+         
+<FONT color=#0000ff>  'Block 1 (column 1) - BROWSER DEMOS</FONT>
+   With Label1(0)
+      .AutoSize = True
+      .ForeColor = &amp;HDD3300
+      .Move 200, 200
+      .Caption = "Browser:"
+      .Visible = True
+   End With
+   
+   For cnt = 0 To 2
+      If cnt &gt; 0 Then Load Option1(cnt)
+      With Option1(cnt)
+         .Height = 255
+         .Move 1330, 130 + (cnt * .Height), 3200
+         .Visible = True
+         vtmp = .Top + .Height
+      End With
+   Next cnt
+   
+   vtmp2 = vtmp
+
+<FONT color=#0000ff>  'Block 2 (column 1) - EMAIL DEMOS</FONT>
+   Load Label1(1)
+   With Label1(1)
+      .AutoSize = True
+      .Move 200, vtmp + 200
+      .Caption = "Email &amp;&amp; News:"
+      .Visible = True
+   End With
+   
+   For cnt = 3 To 6
+      Load Option1(cnt)
+      With Option1(cnt)
+         .Height = 255
+         .Move 1330, vtmp2 + 160 + ((cnt - 3) * .Height), 3200
+         .Visible = True
+         vtmp = .Top + .Height
+      End With
+   Next cnt
+   
+   vtmp2 = vtmp
+   
+<FONT color=#0000ff>  'Block 3 (column 1) - NEWS DEMOS</FONT>
+   Load Label1(2)
+   With Label1(2)
+      .AutoSize = True
+      .Move 200, vtmp + 200
+      .Caption = "News:"
+      .Visible = True
+   End With
+   
+   For cnt = 7 To 8
+      If cnt &gt; 0 Then Load Option1(cnt)
+      With Option1(cnt)
+         .Height = 255
+         .Move 1330, vtmp2 + 160 + ((cnt - 7) * .Height), 3200
+         .Visible = True
+         vtmp = .Top + .Height
+      End With
+   Next cnt
+   
+   vtmp2 = vtmp
+
+<FONT color=#0000ff>  'Block 4 (column 1) - FILE SYSTEM DEMOS</FONT>
+   Load Label1(3)
+   With Label1(3)
+      .AutoSize = True
+      .Move 200, vtmp + 200
+      .Caption = "File System:"
+      .Visible = True
+   End With
+
+   For cnt = 9 To 17
+      Load Option1(cnt)
+      With Option1(cnt)
+         .Height = 255
+         .Move 1330, vtmp2 + 160 + ((cnt - 9) * .Height), 3200
+         .Visible = True
+         vtmp = .Top + .Height
+      End With
+   Next cnt
+
+   vtmp3 = vtmp <FONT color=#0000ff>'to position the command button later</FONT>
+   vtmp = -30   <FONT color=#0000ff>'reset</FONT>
+   vtmp2 = vtmp <FONT color=#0000ff>'vtmp increments, we need another copy</FONT>
+   
+<FONT color=#0000ff>  'Block 1 (column 2) - EXPLORER (absolute)</FONT>
+   Load Label1(4)
+   With Label1(4)
+      .AutoSize = True
+      .Move 4600, 200
+      .Caption = "Explorer (absolute):"
+      .Visible = True
+   End With
+
+   For cnt = 18 To 27
+      Load Option1(cnt)
+      With Option1(cnt)
+         .Height = 255
+         .Move 6150, vtmp2 + 160 + ((cnt - 18) * .Height), 3200
+         .Visible = True
+         vtmp = .Top + .Height
+      End With
+   Next cnt
+
+   vtmp2 = vtmp
+
+<FONT color=#0000ff>  'Block 2 (column 2) - EXPLORER (localized)</FONT>
+   Load Label1(5)
+   With Label1(5)
+      .AutoSize = True
+      .Move 4600, vtmp + 200
+      .Caption = "Explorer (localized):"
+      .Visible = True
+   End With
+
+   For cnt = 28 To 40
+      Load Option1(cnt)
+      With Option1(cnt)
+         .Height = 255
+         .Move 6150, vtmp2 + 160 + ((cnt - 28) * .Height), 3200
+         .Visible = True
+         vtmp = .Top + .Height + 120
+      End With
+   Next cnt
+      
+   With Command1
+      .Caption = "Perform action"
+      .Move 1330, vtmp3 + 250, 2400
+   End With
+   
+<FONT color=#0000ff>  'throw on the captions</FONT>
+   For cnt = Option1.LBound To Option1.UBound
+      With Option1(cnt)
+         Select Case cnt
+            Case 0: .Caption = "Open Default Browser"
+            Case 1: .Caption = "IE Default Home Page (new browser)"
+            Case 2: .Caption = "Specific Browser (knowing exe path)"
+
+            Case 3: .Caption = "Email w/subject/sig"
+            Case 4: .Caption = "Email w/subject/message"
+            Case 5: .Caption = "Email w/cc/bcc/message"
+            Case 6: .Caption = "Email w/mutli-line message"
+            Case 7: .Caption = "msnews w/default news reader"
+            Case 8: .Caption = "msnews - specific acct (vb.winapi)"
+            
+            Case 9: .Caption = ".doc Files (Association)"
+            Case 10: .Caption = ".txt Files (Association)"
+            Case 11: .Caption = ".wav Files (Open)"
+            Case 12: .Caption = ".wav Files (Play)"
+            Case 13: .Caption = ".avi (Play)"
+            Case 14: .Caption = ".bat (for exiting in notepad)"
+            Case 15: .Caption = ".lnk Files (Open file via shortcut)"
+            Case 16: .Caption = ".html (Open local HTML File)"
+
+            Case 18: .Caption = "Rooted @ program files (default view)"
+            Case 19: .Caption = "Rooted @ program files (explorer view)"
+            Case 20: .Caption = "My Computer, specific folder opened"
+            Case 21: .Caption = "Explore Drive C:\"
+            Case 22: .Caption = "Explore Current Drive (same as CurDrive)"
+            Case 23: .Caption = "Recycle Bin"
+            Case 24: .Caption = "Open folder &amp;&amp; select file (default view)"
+            Case 25: .Caption = "Explore folder &amp;&amp; select file"
+            Case 26: .Caption = "Root at specific folder (default view)"
+            Case 27: .Caption = "Search for files (specifying start point)"
+
+            Case 28: .Caption = "My Computer (default view)"
+            Case 29: .Caption = "My Computer (explorer view)"
+            Case 30: .Caption = "My Documents (default view)"
+            Case 31: .Caption = "My Documents (explorer view)"
+            Case 32: .Caption = "My Documents (default view,rooted)"
+            Case 33: .Caption = "My Network Places (default view)" 'aka NetworkNeighborhood
+            Case 34: .Caption = "Network Connections (default view)"
+            Case 35: .Caption = "Network Connections (explorer view)"
+            Case 36: .Caption = "Printers &amp;&amp; Faxes (default view)"
+            Case 37: .Caption = "Printers &amp;&amp; Faxes (explorer view)"
+            Case 38: .Caption = "Search results (files, default view)"
+            Case 39: .Caption = "Search results (computers, default view)"
+            Case 40: .Caption = "Scheduled Tasks (default view)"
+         End Select
+   
+      End With
+   Next
+   
+End Sub
+
+
+Private Sub RunShellExecute(sTopic As String, _
+                            sFile As Variant, _
+                            sParams As Variant, _
+                            sDirectory As Variant, _
+                            nShowCmd As Long)
+
+   Dim hWndDesk As Long
+   Dim success As Long
+  
+<FONT color=#0000ff>  'the desktop will be the
+  'default for error messages</FONT>
+   hWndDesk = GetDesktopWindow()
+  
+<FONT color=#0000ff>  'execute the passed operation</FONT>
+   success = ShellExecute(hWndDesk, sTopic, sFile, sParams, sDirectory, nShowCmd)
+
+<FONT color=#0000ff>  'This is optional. Uncomment the three lines
+  'below to have the "Open With.." dialog appear
+  'when the ShellExecute API call fails
+  'If success &lt; 32 Then
+  '   Call Shell("rundll32.exe shell32.dll,OpenAs_RunDLL " &amp; sFile, vbNormalFocus)
+  'End If</FONT>
+   
+End Sub</PRE></SPAN></TD></TR>
+  <TR>
+    <TD width="100%"></TD></TR>
+  <TR>
+    <TD width="100%" bgColor=#29527c height=22><FONT 
+      face="Univers, Arial, Helvetica, Verdana, Sans-serif" color=#ffffff 
+      size=2><STRONG>&nbsp;Comments</STRONG></FONT></TD></TR>
+  <TR>
+    <TD width="100%"></TD></TR>
+  <TR>
+    <TD width="100%">
+      <HR color=#29527c noShade SIZE=1>
+    </TD></TR></TBODY></TABLE><!--webbot bot="Include" u-include="../../terms/pages/copyfoot.htm" tag="BODY" startspan -->
+<TABLE cellSpacing=15 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD noWrap></TD>
+    <TD width="100%">
+      <P align=center>
+      <SCRIPT type=text/javascript><!--
+				google_ad_client = "pub-5641199584549890";
+				google_ad_width = 728;
+				google_ad_height = 90;
+				google_ad_format = "728x90_as";
+				google_ad_channel ="2402814055";
+				google_ad_type = "text_image";
+				google_page_url = document.location;
+				google_color_border = "29527C";
+				google_color_bg = "FFFFFF";
+				google_color_link = "0000FF";
+				google_color_url = "7A6E4F";
+				google_color_text = "000000";
+				//--></SCRIPT>
+
+      <SCRIPT src="shellexecute_files/show_ads.js" type=text/javascript>
+			</SCRIPT>
+      </P></TD></TR></TBODY></TABLE>
+<SCRIPT language=JavaScript src="shellexecute_files/vbnetcopy.js"></SCRIPT>
+
+<TABLE style="BORDER-COLLAPSE: collapse" borderColor=#111111 cellSpacing=0 
+cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD noWrap width=18>&nbsp;</TD>
+    <TD>
+      <HR color=#29527c noShade>
+    </TD>
+    <TD noWrap width=18>&nbsp;</TD></TR>
+  <TR>
+    <TD noWrap width=18>&nbsp;</TD>
+    <TD>
+      <P align=center><FONT face="verdana, arial" size=1><SPAN 
+      class=need85wwl>Copyright&nbsp;©1996-2006 VB<EM>net</EM> and Randy 
+      Birch.&nbsp;All Rights Reserved.<BR><A 
+      href="http://vbnet.mvps.org/terms/pages/terms.htm" target=_self>Terms of 
+      Use</A>&nbsp; |&nbsp; <A 
+      href="http://vbnet.mvps.org/news/main/vbnprivacy.htm" target=_self>Your 
+      Privacy</A></SPAN></FONT></P></TD>
+    <TD noWrap width=18>&nbsp;</TD></TR>
+  <TR>
+    <TD noWrap width=18></TD>
+    <TD>
+      <P align=center>&nbsp;</P></TD>
+    <TD noWrap width=18></TD></TR></TBODY></TABLE>
+<P><TEXTAREA id=holdtext style="DISPLAY: none" name=jscopytext rows=1></TEXTAREA></P><!--webbot bot="Include" endspan i-checksum="65406" --></BODY></HTML>

@@ -1,0 +1,75 @@
+BODY.codesec {
+	FONT-SIZE: 70%; COLOR: #29527c; weight: normal; align: right
+}
+BODY.codedata {
+	FONT-SIZE: 70%; COLOR: #29527c; weight: strong
+}
+H1 {
+	FONT: 15pt/17pt bold "Arial" normal
+}
+A {
+	FONT: 8.5pt/11.5pt normal "Verdana, Arial" normal; COLOR: blue; TEXT-DECORATION: none
+}
+A.sp {
+	FONT: 8.5pt/9.5pt normal "Verdana, Arial" normal; COLOR: blue; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: darkred; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: red; TEXT-DECORATION: none
+}
+.cmenu {
+	FONT: 8.5pt/9.5pt normal "Verdana, Arial" normal; COLOR: blue; TEXT-DECORATION: none
+}
+.welcomefoot {
+	FONT-SIZE: 8.5pt; COLOR: #000000; LINE-HEIGHT: 14.5pt; FONT-FAMILY: verdana, arial, geneva, sans-serif
+}
+.welcomemsg {
+	FONT-SIZE: 8.5pt; COLOR: #000000; LINE-HEIGHT: 14.5pt; FONT-FAMILY: verdana, arial, geneva, sans-serif
+}
+.welcount1 {
+	FONT-SIZE: 8.5pt; COLOR: #8b0000; FONT-FAMILY: verdana, arial, geneva, sans-serif
+}
+.welcount2 {
+	FONT-SIZE: 8.5pt; COLOR: #29527c; FONT-FAMILY: verdana, arial, geneva, sans-serif
+}
+.need9 {
+	FONT-SIZE: 9pt; LINE-HEIGHT: 11.5pt; FONT-FAMILY: verdana, arial, geneva, sans-serif; TEXT-ALIGN: left
+}
+.need9wl {
+	FONT-SIZE: 9pt; LINE-HEIGHT: 14pt; FONT-FAMILY: verdana, arial, geneva, sans-serif; TEXT-ALIGN: left
+}
+.need85wl {
+	FONT-SIZE: 8.5pt; LINE-HEIGHT: 11.5pt; FONT-FAMILY: verdana, arial, geneva, sans-serif; TEXT-ALIGN: left
+}
+.need85nl {
+	FONT-SIZE: 8.5pt; LINE-HEIGHT: 10.5pt; FONT-FAMILY: verdana, arial, geneva, sans-serif; TEXT-ALIGN: left
+}
+.linkmsg {
+	FONT-SIZE: 8.5pt; LINE-HEIGHT: 11.5pt; FONT-FAMILY: verdana, arial, geneva, sans-serif
+}
+.need85wwl {
+	FONT: 8.5pt/11.5pt normal "Verdana, Arial" normal
+}
+.need85nsl {
+	FONT: 8.5pt/10.5pt bold "Verdana, Arial" bold
+}
+.need85wwlb {
+	FONT: 8.5pt/11.5pt bold "Verdana, Arial" bold
+}
+.need85wwlbbl {
+	FONT: 8.5pt/11.5pt bold "Verdana, Arial" bold; COLOR: #29527c
+}
+.need85wwlx {
+	FONT: 8.5pt/16pt normal "Verdana, Arial" normal
+}
+.statchartb {
+	FONT-SIZE: 8.5pt; COLOR: #000000; LINE-HEIGHT: 11.5pt; FONT-FAMILY: verdana, arial, geneva, sans-serif
+}
+.statchart {
+	FONT-SIZE: 8.5pt; COLOR: #000000; LINE-HEIGHT: 11.5pt; FONT-FAMILY: verdana, arial, geneva, sans-serif
+}

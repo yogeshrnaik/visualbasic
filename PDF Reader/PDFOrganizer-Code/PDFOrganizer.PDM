@@ -1,0 +1,260 @@
+[Root]
+Most Recent Package=PDFOrganizer-Setup
+
+
+[Package|Standard Setup Package 1|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\PDFOrganizer-Setup
+
+[Package|Standard Setup Package 1|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup Package 1|Files Found]
+
+[Package|Standard Setup Package 1|Files Released]
+
+[Package|Standard Setup Package 1|Missing Dependency Information]
+C:\Program Files\Adobe\Acrobat 6.0\Acrobat\acrobat.tlb=
+C:\Program Files\Common Files\System\ado\msado25.tlb=
+D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\bin\PDFParser.dll=
+C:\WINDOWS\system32\acrobat.tlb=
+C:\Program Files\PDFOrganizer\PDFParser.dll=
+C:\WINDOWS\system32\PDFParser.dll=
+
+[Package|Standard Setup Package 1|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\MSCOMCTL.OCX=
+C:\WINDOWS\system32\comdlg32.ocx=
+C:\WINDOWS\system32\scrrun.dll=
+
+[Package|Standard Setup Package 1|Files Added]
+d:\my hdd\1. yogesh\1. my projects\0. pdf reader\pdforganizer\database\pdffilesinfo.mdb=
+
+[Package|Standard Setup Package 1|Files Removed]
+
+[Package|Standard Setup Package 1|Files In Project]
+D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\PDFOrganizer-Setup\PDFOrganizer.exe=Yes
+C:\WINDOWS\system32\msvbvm60.dll=Yes
+C:\WINDOWS\system32\oleaut32.dll=Yes
+C:\WINDOWS\system32\olepro32.dll=Yes
+C:\WINDOWS\system32\asycfilt.dll=Yes
+C:\WINDOWS\system32\stdole2.tlb=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\system32\scrrun.dll=Yes
+C:\WINDOWS\system32\msvcrt.dll=Yes
+C:\Program Files\Common Files\System\ado\msado25.tlb=Yes
+C:\WINDOWS\system32\comdlg32.ocx=Yes
+C:\WINDOWS\system32\MSCOMCTL.OCX=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\PDFOrganizer\database\pdfFilesInfo.mdb=Yes
+C:\WINDOWS\system32\acrobat.tlb=Yes
+C:\WINDOWS\system32\PDFParser.dll=Yes
+
+[Package|Standard Setup Package 1|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup Package 1|Install Locations]
+D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\PDFOrganizer-Setup\PDFOrganizer.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\scrrun.dll=$(WinSysPath)
+C:\WINDOWS\system32\msvcrt.dll=$(WinSysPathSysFile)
+D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\bin\PDFParser.dll=$(AppPath)
+C:\Program Files\Common Files\System\ado\msado25.tlb=$(WinSysPath)
+C:\Program Files\Adobe\Acrobat 6.0\Acrobat\acrobat.tlb=$(WinSysPath)
+C:\WINDOWS\system32\comdlg32.ocx=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMCTL.OCX=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\PDFOrganizer\database\pdfFilesInfo.mdb=$(AppPath)\database
+C:\Program Files\PDFOrganizer\PDFParser.dll=$(WinSysPath)
+C:\WINDOWS\system32\acrobat.tlb=$(WinSysPath)
+C:\WINDOWS\system32\PDFParser.dll=$(WinSysPath)
+
+[Package|Standard Setup Package 1|Configure Shared Files]
+Applicable=Yes
+D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\PDFOrganizer-Setup\PDFOrganizer.exe=Yes
+D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\bin\PDFParser.dll=Yes
+D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\PDFOrganizer\database\pdfFilesInfo.mdb=Yes
+
+[Package|Standard Setup Package 1|Distribution]
+Type=single
+Size=
+Title=PDFOrganizer
+
+[Package|Standard Setup Package 1|Package]
+PackageFolder=D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\PDFOrganizer-Setup
+ProjectFolder=D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\PDFOrganizer
+ServerSideCab=
+File1=D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\PDFOrganizer-Setup\setup.exe
+File2=D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\PDFOrganizer-Setup\Setup.Lst
+File3=D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\PDFOrganizer-Setup\PDFOrganizer.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Package|Standard Setup Package 1|IconGroups]
+Group0=PDFOrganizer
+PrivateGroup0=True
+Parent0=$(Programs)
+
+[Package|Standard Setup Package 1|PDFOrganizer]
+Icon1=PDFOrganizer.exe
+Title1=PDFOrganizer
+StartIn1=$(AppPath)
+Key1=Icon1
+
+
+[Package|PDFOrganizer-Setup|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\Yogesh\My Sample Programs\Reading PDF files\PDFOrganizer-Installer
+
+[Package|PDFOrganizer-Setup|Configure DAO ISAMs]
+Applicable=No
+
+[Package|PDFOrganizer-Setup|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|PDFOrganizer-Setup|Files Found]
+pdfFilesInfo.mdb=D:\Yogesh\My Sample Programs\Reading PDF files\PDFOrganizer\database\pdfFilesInfo.mdb
+
+[Package|PDFOrganizer-Setup|Files Released]
+
+[Package|PDFOrganizer-Setup|Missing Dependency Information]
+C:\Program Files\Adobe\Acrobat 6.0\Acrobat\acrobat.tlb=
+C:\Program Files\Common Files\System\ado\msado25.tlb=
+D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\bin\PDFParser.dll=
+C:\WINDOWS\system32\acrobat.tlb=
+C:\Program Files\PDFOrganizer\PDFParser.dll=
+C:\WINDOWS\system32\PDFParser.dll=
+D:\Yogesh\My Sample Programs\Reading PDF files\pdf using VB, java, etc\bin\PDFParser.dll=
+
+[Package|PDFOrganizer-Setup|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\MSCOMCTL.OCX=
+C:\WINDOWS\system32\comdlg32.ocx=
+C:\WINDOWS\system32\scrrun.dll=
+C:\WINNT\system32\MSCOMCTL.OCX=
+C:\WINNT\system32\comdlg32.ocx=
+C:\WINNT\system32\scrrun.dll=
+
+[Package|PDFOrganizer-Setup|Files Added]
+pdffilesinfo.mdb=
+
+[Package|PDFOrganizer-Setup|Files Removed]
+
+[Package|PDFOrganizer-Setup|Files In Project]
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Program Files\Common Files\System\ado\msado25.tlb=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\Documents and Settings\rnaikyog\Desktop\PDFOrganizer.exe=Yes
+C:\WINNT\system32\MSVBVM60.DLL=Yes
+C:\WINNT\system32\OLEAUT32.DLL=Yes
+C:\WINNT\system32\OLEPRO32.DLL=Yes
+C:\WINNT\system32\ASYCFILT.DLL=Yes
+C:\WINNT\system32\STDOLE2.TLB=Yes
+C:\WINNT\system32\scrrun.dll=Yes
+C:\WINNT\system32\msvcrt.dll=Yes
+D:\Yogesh\My Sample Programs\Reading PDF files\pdf using VB, java, etc\bin\PDFParser.dll=Yes
+C:\WINNT\system32\comdlg32.ocx=Yes
+C:\WINNT\system32\MSCOMCTL.OCX=Yes
+C:\WINNT\system32\VB6STKIT.DLL=Yes
+D:\Yogesh\My Sample Programs\Reading PDF files\PDFOrganizer\database\pdfFilesInfo.mdb=Yes
+
+[Package|PDFOrganizer-Setup|Configure Registry Files]
+Applicable=No
+
+[Package|PDFOrganizer-Setup|Configure Remote Servers]
+Applicable=No
+
+[Package|PDFOrganizer-Setup|Install Locations]
+D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\PDFOrganizer-Setup\PDFOrganizer.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\scrrun.dll=$(WinSysPath)
+C:\WINDOWS\system32\msvcrt.dll=$(WinSysPathSysFile)
+D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\bin\PDFParser.dll=$(AppPath)
+C:\Program Files\Common Files\System\ado\msado25.tlb=$(AppPath)\bin
+C:\Program Files\Adobe\Acrobat 6.0\Acrobat\acrobat.tlb=$(WinSysPath)
+C:\WINDOWS\system32\comdlg32.ocx=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMCTL.OCX=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\PDFOrganizer\database\pdfFilesInfo.mdb=$(AppPath)\database
+C:\Program Files\PDFOrganizer\PDFParser.dll=$(WinSysPath)
+C:\WINDOWS\system32\acrobat.tlb=$(WinSysPath)
+C:\WINDOWS\system32\PDFParser.dll=$(WinSysPath)
+C:\Documents and Settings\rnaikyog\Desktop\PDFOrganizer.exe=$(AppPath)\bin
+C:\WINNT\system32\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\WINNT\system32\scrrun.dll=$(AppPath)\bin
+C:\WINNT\system32\msvcrt.dll=$(WinSysPathSysFile)
+D:\Yogesh\My Sample Programs\Reading PDF files\pdf using VB, java, etc\bin\PDFParser.dll=$(AppPath)\bin
+C:\WINNT\system32\comdlg32.ocx=$(AppPath)\bin
+C:\WINNT\system32\MSCOMCTL.OCX=$(AppPath)\bin
+C:\WINNT\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+D:\Yogesh\My Sample Programs\Reading PDF files\PDFOrganizer\database\pdfFilesInfo.mdb=$(AppPath)\database
+
+[Package|PDFOrganizer-Setup|Configure Shared Files]
+Applicable=Yes
+D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\PDFOrganizer-Setup\PDFOrganizer.exe=Yes
+D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\bin\PDFParser.dll=Yes
+D:\MY HDD\1. Yogesh\1. My Projects\0. PDF Reader\PDFOrganizer\database\pdfFilesInfo.mdb=Yes
+C:\Documents and Settings\rnaikyog\Desktop\PDFOrganizer.exe=Yes
+C:\WINNT\system32\scrrun.dll=Yes
+D:\Yogesh\My Sample Programs\Reading PDF files\pdf using VB, java, etc\bin\PDFParser.dll=Yes
+C:\Program Files\Common Files\System\ado\msado25.tlb=Yes
+C:\WINNT\system32\comdlg32.ocx=Yes
+C:\WINNT\system32\MSCOMCTL.OCX=Yes
+D:\Yogesh\My Sample Programs\Reading PDF files\PDFOrganizer\database\pdfFilesInfo.mdb=Yes
+
+[Package|PDFOrganizer-Setup|Distribution]
+Type=single
+Size=
+Title=PDFOrganizer
+
+[Package|PDFOrganizer-Setup|IconGroups]
+Group0=PDFOrganizer
+PrivateGroup0=True
+Parent0=$(Programs)
+
+[Package|PDFOrganizer-Setup|PDFOrganizer]
+Icon1=PDFOrganizer.exe
+Title1=PDFOrganizer
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|PDFOrganizer-Setup|Package]
+PackageFolder=D:\Yogesh\My Sample Programs\Reading PDF files\PDFOrganizer-Installer
+ProjectFolder=D:\Yogesh\My Sample Programs\Reading PDF files\PDFOrganizer
+ServerSideCab=
+File1=D:\Yogesh\My Sample Programs\Reading PDF files\PDFOrganizer-Installer\setup.exe
+File2=D:\Yogesh\My Sample Programs\Reading PDF files\PDFOrganizer-Installer\Setup.Lst
+File3=D:\Yogesh\My Sample Programs\Reading PDF files\PDFOrganizer-Installer\PDFOrganizer.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
